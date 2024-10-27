@@ -1,0 +1,76 @@
+!!python/object:argparse.Namespace
+data: !!python/object:argparse.Namespace
+  dataset: h36m_2view
+  dataset_path: ./data/data_3d_h36m.npz
+  dataset_path_test_2d: ./data/data_2d_h36m_cpn_ft_h36m_dbb_gmm.npz
+  dataset_path_train_2d: ./data/data_2d_h36m_gt_gmm.npz
+  num_joints: 17
+  num_workers: 32
+  root_relative: true
+dataset: !!python/object:argparse.Namespace
+  heatmap_shape:
+  - 96
+  - 96
+  image_shape:
+  - 384
+  - 384
+  num_views: 2
+  train: !!python/object:argparse.Namespace
+    baseline_width: m
+    h36m_root: /data1/share/dataset/human36m_multi-view/processed/
+    labels_path: /data1/share/dataset/human36m_multi-view/extra/human36m-stereo-labels-GTbboxes.npy
+    pred_2d_error_dis_path: data/h36m_2d_gauss_RSB152.npy
+    rectificated: true
+  val: !!python/object:argparse.Namespace
+    baseline_width: m
+    crop: true
+    h36m_root: /data1/share/dataset/human36m_multi-view/processed/
+    labels_path: /data1/share/dataset/human36m_multi-view/extra/human36m-stereo-labels-GTbboxes.npy
+    pred_2d_error_dis_path: data/h36m_2d_gauss_RSB152.npy
+    pred_2d_results_path: data/h36m_results_RSB152.pkl
+    rectificated: true
+device: !!python/object/apply:torch.device
+- cuda
+diffusion: !!python/object:argparse.Namespace
+  beta_end: 0.001
+  beta_schedule: linear
+  beta_start: 0.0001
+  num_diffusion_timesteps: 76
+model: !!python/object:argparse.Namespace
+  action_emd: true
+  coords_dim:
+  - 3
+  - 3
+  depth_emd: true
+  dropout: 0.25
+  ema: true
+  ema_rate: 0.999
+  emd_dim: 96
+  hid_dim: 96
+  n_head: 4
+  n_pts: 17
+  num_layer: 5
+  resamp_with_conv: true
+  var_type: fixedsmall
+optim: !!python/object:argparse.Namespace
+  amsgrad: false
+  decay: 60
+  eps: 1.0e-08
+  grad_clip: 1.0
+  lr: 0.001
+  lr_gamma: 0.9
+  optimizer: Adam
+testing: !!python/object:argparse.Namespace
+  batch_size: 256
+  hypothesis_agg: mean
+  num_workers: 32
+  shuffle: false
+  test_num_diffusion_timesteps: 24
+  test_times: 10
+  test_timesteps: 2
+training: !!python/object:argparse.Namespace
+  batch_size: 64
+  loss_type: 2d
+  n_epochs: 80
+  num_workers: 32
+  shuffle: true

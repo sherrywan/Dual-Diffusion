@@ -1,0 +1,76 @@
+data:
+    dataset: "mhad_2view"
+    dataset_path: "./data/data_3d_h36m.npz"
+    dataset_path_train_2d: "./data/data_2d_h36m_gt_gmm.npz"
+    dataset_path_test_2d: "./data/data_2d_h36m_cpn_ft_h36m_dbb_gmm.npz"
+    num_joints: 17
+    num_workers: 32
+    root_relative: true
+
+dataset:
+    image_shape: [384, 384]
+    heatmap_shape: [96, 96]
+    num_views : 2
+    train:
+        mhad_root: "/data1/share/dataset/MHAD_Berkeley/stereo_camera/"
+        labels_path: "/data1/share/dataset/MHAD_Berkeley/stereo_camera/extra/mhad-stereo-m-labels-GTbboxes.npy"
+        pred_2d_results_path: "data/mhad_results_resnet50_train.pkl"
+        pred_2d_error_dis_path: "data/mhad_2d_gauss_RSB152.npy"
+        rectificated: True
+        baseline_width: 'm'
+    val:
+        mhad_root: "/data1/share/dataset/MHAD_Berkeley/stereo_camera/"
+        labels_path: "/data1/share/dataset/MHAD_Berkeley/stereo_camera/extra/mhad-stereo-m-labels-GTbboxes.npy"
+        pred_2d_results_path: "data/mhad_results_RSB152.pkl"
+        pred_2d_error_dis_path: "data/mhad_2d_gauss_RSB152.npy"
+        crop: True
+        rectificated: True
+        baseline_width: 'm'
+
+model:
+    hid_dim: 96
+    emd_dim: 96
+    coords_dim: [3,3]
+    num_layer: 5
+    n_head: 4
+    dropout: 0.25
+    n_pts: 17
+    ema_rate: 0.999
+    ema: True
+    resamp_with_conv: True
+    var_type: fixedsmall
+    action_emd: True
+    depth_emd: True
+    depth_norm_by_bw: True
+
+diffusion:
+    beta_schedule: linear
+    beta_start: 0.0001
+    beta_end: 0.001
+    num_diffusion_timesteps: 26
+
+training:
+    batch_size: 1
+    shuffle: True
+    n_epochs: 80
+    num_workers: 32
+    loss_type: "2d"
+
+testing:
+    batch_size: 256
+    shuffle: False
+    num_workers: 32
+    test_times: 1
+    test_timesteps: 2
+    test_num_diffusion_timesteps: 25
+    hypothesis_agg: "mean"
+
+optim:
+    decay: 60
+    optimizer: "Adam"
+    lr: 0.00001
+    lr_gamma: 0.9
+    eps: 0.00000001
+    amsgrad: false
+    grad_clip: 1.0
+    
