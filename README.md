@@ -1,13 +1,13 @@
-# [Dual-Diffusion for Binocular 3D Human Pose Estimation, NeurIPS]
+# [Dual-Diffusion for Binocular 3D Human Pose Estimation, NeurIPS2024]
 
 
 ## Dual-Diffusion Model Architecture
 
-<p align="center"> <img src="./figure/dual_diffusion.pdf" width="100%"> </p>
+<p align="center"> <img src="./figure/modeling.png" width="100%"> </p>
 
 ## DiffPose Diffusion Process
 
-<p align="center"> <img src="./figure/Diffpose_process.png" width="100%"> </p>
+<p align="center"> <img src="./figure/process.png" width="100%"> </p>
 
 Our code is built on top of [DDIM](https://github.com/ermongroup/ddim) and [DiffPose](https://GONGJIA0208.github.io/Diffpose/).
 
@@ -22,9 +22,9 @@ conda env create -f environment.yml
 ### Dataset
 
 The data includes:
-    1. labels (update the labels_path in the config.)
-    2. 2D poses estimated from 2D pose estimator (put into the `./data` directory)
-    3. statistical or fixed mean and standard deviation of the estimated 2D poses (put into the `./data` directory)
+1. labels (update the labels_path in the config.)
+2. 2D poses estimated from 2D pose estimator (put into the `./data` directory)
+3. statistical or fixed mean and standard deviation of the estimated 2D poses (put into the `./data` directory)
 
 #### human3.6
 The H36M dataset is prrprocessed according to step 1-5 in [learnabel_triangulation](https://github.com/karfly/learnable-triangulation-pytorch/blob/master/mvn/datasets/human36m_preprocessing/README.md). Then the binocular labels are generated according to [stereo_estimation](https://github.com/sherrywan/stereo-estimation).
