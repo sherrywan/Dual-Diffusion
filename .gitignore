@@ -7,4 +7,4 @@ __pycache__/
 *.pth
 
 # data
-data/
+datas/
