@@ -5,7 +5,7 @@
 
 <p align="center"> <img src="./figure/modeling.png" width="100%"> </p>
 
-## DiffPose Diffusion Process
+## Dual-Diffusion Diffusion Process
 
 <p align="center"> <img src="./figure/process.png" width="100%"> </p>
 
@@ -27,7 +27,7 @@ The data includes:
 3. statistical or fixed mean and standard deviation of the estimated 2D poses (put into the `./data` directory)
 
 #### human3.6
-The H36M dataset is prrprocessed according to step 1-5 in [learnabel_triangulation](https://github.com/karfly/learnable-triangulation-pytorch/blob/master/mvn/datasets/human36m_preprocessing/README.md). Then the binocular labels are generated according to [stereo_estimation](https://github.com/sherrywan/stereo-estimation).
+The H36M dataset is preprocessed according to steps 1-5 in [learnabel_triangulation](https://github.com/karfly/learnable-triangulation-pytorch/blob/master/mvn/datasets/human36m_preprocessing/README.md). Then the binocular labels are generated according to [stereo_estimation](https://github.com/sherrywan/stereo-estimation).
 
 #### MHAD
 The MHAD dataset is preprocessed by [MHAD_Berkeley_preprocess](https://github.com/sherrywan/MHAD_Berkeley_preprocess). Then the binocular labels are generated according to [MHAD_Berkeley_stereo](https://github.com/sherrywan/stereo-estimation/blob/main/lib/datasets/mhad_preprocess/readme.md).
