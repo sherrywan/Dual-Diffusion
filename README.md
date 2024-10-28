@@ -5,7 +5,7 @@
 
 <p align="center"> <img src="./figure/modeling.png" width="100%"> </p>
 
-## Dual-Diffusion Diffusion Process
+## Dual-Diffusion Process
 
 <p align="center"> <img src="./figure/process.png" width="100%"> </p>
 
