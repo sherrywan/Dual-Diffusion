@@ -16,7 +16,7 @@ Our code is built on top of [DDIM](https://github.com/ermongroup/ddim) and [Diff
 You can create the environment via:
 
 ```bash
-conda env create -f environment.yml
+pip install -r requirement.txt
 ```
 
 ### Dataset
