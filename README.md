@@ -61,17 +61,18 @@ CUDA_VISIBLE_DEVICES=0 python main_diffpose_2view_frame.py \
 ```
 
 
-<!-- ## Bibtex
+## Bibtex
 
 If you find our work useful in your research, please consider citing:
 
-    @InProceedings{gong2023diffpose,
-        author    = {Gong, Jia and Foo, Lin Geng and Fan, Zhipeng and Ke, Qiuhong and Rahmani, Hossein and Liu, Jun},
-        title     = {DiffPose: Toward More Reliable 3D Pose Estimation},
-        booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-        month     = {June},
-        year      = {2023},
-    } -->
+    @inproceedings{
+        anonymous2024dualdiffusion,
+        title={Dual-Diffusion for Binocular 3D Human Pose Estimation},
+        author={Anonymous},
+        booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+        year={2024},
+        url={https://openreview.net/forum?id=NT8Z5NjwxF}
+    } 
 
 ## Acknowledgement
 
