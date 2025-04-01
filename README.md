@@ -32,6 +32,11 @@ The H36M dataset is preprocessed according to steps 1-5 in [learnabel_triangulat
 #### MHAD
 The MHAD dataset is preprocessed by [MHAD_Berkeley_preprocess](https://github.com/sherrywan/MHAD_Berkeley_preprocess). Then the binocular labels are generated according to [MHAD_Berkeley_stereo](https://github.com/sherrywan/stereo-estimation/blob/main/lib/datasets/mhad_preprocess/readme.md).
 
+The labels can be downloaded [here](【超级会员V4】我通过百度网盘分享的文件：data
+链接：https://pan.baidu.com/s/1nYRICIhMJFZmkq-bR_05dg 
+提取码：S2fq 
+复制这段内容打开「百度网盘APP即可获取」).
+
 Note that we only provide the 2D poses estimated from RSB-Pose.
 
 ### Training
